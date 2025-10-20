@@ -1,0 +1,101 @@
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #fff;
+  background-color: #0b1220;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('../../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-landing {
+  min-height: 100vh;
+  padding: 72px 24px 32px; /* deja espacio bajo la nav */
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: min(1100px, 96vw);
+}
+
+h1 { margin: 0 0 18px; font-size: 1.9rem; }
+.section { margin-top: 18px; }
+.section h2 { margin: 0 0 12px; font-size: 1.25rem; color: #e0e6ed; }
+
+.empty {
+  background: rgba(10, 20, 30, 0.92);
+  border: 2px solid #fff;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: rgba(10, 20, 30, 0.92);
+  border: 2px solid #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.card > * { width: 100%; }
+.card h3 { margin: 0; font-size: 1.12rem; }
+.resumen { margin: 0; color: #e2e8f0; font-size: 0.98rem; flex: 1; }
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  margin-top: auto;
+}
+
+.badge.estado {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e0e6ed;
+  color: #0b1220;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.btn-detalle {
+  appearance: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  background: transparent;
+  color: #fff;
+}

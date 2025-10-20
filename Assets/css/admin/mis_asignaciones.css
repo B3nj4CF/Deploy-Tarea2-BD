@@ -1,0 +1,478 @@
+html, body { 
+  height: 100%; 
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #fff;
+  background-color: #0b1220;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('../../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-landing {
+  min-height: 100vh;
+  padding: 80px 24px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor {
+  width: min(1200px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Mensajes */
+.mensaje {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.mensaje.success {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1.5px solid #22c55e;
+  color: #86efac;
+}
+
+.mensaje.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1.5px solid #ef4444;
+  color: #fca5a5;
+}
+
+.mensaje.hide { 
+  opacity: 0; 
+}
+
+.seccion-solicitudes {
+  background: rgba(10, 20, 30, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+}
+
+.seccion-solicitudes h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 28px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mensaje-vacio {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1.05rem;
+  padding: 40px 20px;
+  font-style: italic;
+}
+
+.lista-asignaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.card-asignacion {
+  background: rgba(16, 26, 43, 0.95);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-asignacion:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.badge {
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.estado-pendiente {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 1.5px solid #fbbf24;
+}
+
+.estado-en-progreso {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border: 1.5px solid #3b82f6;
+}
+
+.estado-finalizado {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1.5px solid #22c55e;
+}
+
+.resumen {
+  margin: 0;
+  color: #d1d5db;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+}
+
+.info-item .label {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.info-item .valor {
+  color: #fff;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Reseñas */
+.resenas-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 18px;
+  margin-top: 6px;
+}
+
+.resenas-container h4 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  color: #e5e7eb;
+}
+
+.resena-item {
+  background: rgba(16, 26, 43, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.resena-item:last-child {
+  margin-bottom: 0;
+}
+
+.resena-texto {
+  margin: 0 0 10px;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.resena-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.resena-meta small {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.resena-acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-editar {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+.btn-editar:hover {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.btn-eliminar {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border-color: #f87171;
+}
+
+.btn-eliminar:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+/* Agregar Reseña */
+.agregar-resena {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 18px;
+  margin-top: 4px;
+}
+
+.agregar-resena h4 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  color: #e5e7eb;
+}
+
+.form-resena {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-resena textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #e0e6ed;
+  background: #101a2b;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.form-resena textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.btn-agregar {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #22c55e;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.btn-agregar:hover {
+  background: rgba(34, 197, 94, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.btn-ver {
+  appearance: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #fff;
+  color: #0b1220;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  flex: 1;
+}
+
+.btn-ver:hover {
+  background: #e0e6ed;
+  transform: scale(1.02);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: linear-gradient(135deg, rgba(16, 26, 43, 0.98), rgba(10, 20, 30, 0.98));
+  margin: 10% auto;
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  width: min(500px, 90%);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h3 {
+  margin: 0 0 20px;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.close {
+  color: #9ca3af;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.modal-content textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #e0e6ed;
+  background: #101a2b;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 18px;
+  transition: border-color 0.2s;
+}
+
+.modal-content textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn-guardar {
+  padding: 11px 22px;
+  border-radius: 30px;
+  border: 2px solid #22c55e;
+  font-weight: 600;
+  font-size: 1rem;
+  background: #22c55e;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-guardar:hover {
+  background: #16a34a;
+  border-color: #16a34a;
+  transform: translateY(-2px);
+}
+
+.btn-cancelar {
+  padding: 11px 22px;
+  border-radius: 30px;
+  border: 2px solid #6b7280;
+  font-weight: 600;
+  font-size: 1rem;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancelar:hover {
+  border-color: #9ca3af;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .card-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .resena-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

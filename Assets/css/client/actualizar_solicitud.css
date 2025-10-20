@@ -1,0 +1,153 @@
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #fff;
+  background-color: #0b1220;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('../../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-landing {
+  min-height: 100vh;
+  padding: 72px 24px 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: min(700px, 96vw);
+  background: rgba(10, 20, 30, 0.92);
+  border: 2px solid #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: min-content;
+}
+
+h1 { margin: 0 0 18px; font-size: 1.5rem; }
+.formulario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.label, label {
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+.input, select, textarea {
+  max-width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #e0e6ed;
+  background: #101a2b;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 2px;
+  transition: border-color 0.18s;
+}
+.input:focus, select:focus, textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+.btn {
+  appearance: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  background: #fff;
+  color: #0b1220;
+  margin-top: 6px;
+}
+.btn:hover { background: #e0e6ed; }
+
+.mensaje {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 8px;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+.mensaje.success {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1.5px solid #22c55e;
+  color: #86efac;
+}
+.mensaje.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1.5px solid #ef4444;
+  color: #fca5a5;
+}
+.mensaje.hide { opacity: 0; }
+
+#criterios-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.criterio-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+.criterio-item .input {
+  flex: 1;
+  margin-bottom: 0;
+}
+.btn-add-criterio, .btn-remove-criterio {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #fff;
+  color: #0b1220;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, transform 0.12s;
+  flex-shrink: 0;
+}
+.btn-add-criterio:hover, .btn-remove-criterio:hover {
+  background: #e0e6ed;
+  transform: scale(1.05);
+}
+.btn-add-criterio {
+  margin: 8px auto 0;
+}
+.btn-remove-criterio {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+}
+.btn-remove-criterio:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}

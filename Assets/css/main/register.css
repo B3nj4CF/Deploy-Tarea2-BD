@@ -1,0 +1,46 @@
+/* Estilo para registro, igual que main pero ajustado para formulario */
+@import url('main.css');
+
+.card form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.label {
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+.input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #e0e6ed;
+  background: #101a2b;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 2px;
+  transition: border-color 0.18s;
+}
+.input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+.error {
+  color: #f87171;
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+  text-align: center;
+}
