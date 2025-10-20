@@ -1,29 +1,31 @@
+# Imagen base de PHP con Apache
 FROM php:8.2-apache
 
-# Copiar todo el proyecto
+# Instala extensiones necesarias
+RUN docker-php-ext-install pdo pdo_mysql mysqli
+
+# Habilita módulos de Apache
+RUN a2enmod rewrite
+
+# Copia tu aplicación al contenedor
 COPY . /var/www/html/
 
-# Instalar extensión mysqli
-RUN docker-php-ext-install mysqli
+# Configura permisos
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
 
-# Definir DocumentRoot en php/Main
-RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/php/Main|g' /etc/apache2/sites-available/000-default.conf \
-    && echo "<Directory /var/www/html/php/Main>\n\
-        Options Indexes FollowSymLinks\n\
-        AllowOverride All\n\
-        Require all granted\n\
-    </Directory>\n\
-    DirectoryIndex index.php" >> /etc/apache2/apache2.conf
+# Establece el directorio de trabajo
+WORKDIR /var/www/html/php/Main
 
-# Permitir acceso a Assets para CSS e imágenes
+# Asegura que los recursos estáticos (CSS, imágenes) sean accesibles
 RUN echo "<Directory /var/www/html/Assets>\n\
     Options Indexes FollowSymLinks\n\
     AllowOverride All\n\
     Require all granted\n\
-</Directory>\n\
-Alias /Assets /var/www/html/Assets" >> /etc/apache2/apache2.conf
+</Directory>" >> /etc/apache2/apache2.conf
 
-# Exponer puerto
-EXPOSE 8080
+# Expone el puerto estándar de Apache
+EXPOSE 80
 
-WORKDIR /var/www/html/php/Main
+# Inicia Apache en primer plano
+CMD ["apache2-foreground"]
